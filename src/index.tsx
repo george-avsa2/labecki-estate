@@ -1,12 +1,11 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
+import ReactDOM from "react-dom";
+import { ChakraProvider, defaultSystem } from "@chakra-ui/react";
 import App from "./App";
-import "App/style.scss";
 
-const RootComponent = () => {
-  return <App />;
-};
-
-const root = ReactDOM.createRoot(document.getElementById("root") as Element);
-
-root.render(<RootComponent />);
+ReactDOM.render(
+  <ChakraProvider value={defaultSystem}>
+    <App />
+  </ChakraProvider>,
+  document.getElementById("root")
+);
